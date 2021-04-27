@@ -16,33 +16,10 @@
 </head>
 
 <body class="c-app">
-    <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
-        <ul class="c-sidebar-nav">
-            <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="index.html">
-                    <svg class="c-sidebar-nav-icon">
-                        <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-speedometer') }}"></use>
-                    </svg> Dashboard<span class="badge badge-info">NEW</span></a></li>
 
-            <li class="c-sidebar-nav-title">Components</li>
-            <li class="c-sidebar-nav-dropdown"><a class="c-sidebar-nav-dropdown-toggle" href="#">
-                    <svg class="c-sidebar-nav-icon">
-                        <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-puzzle') }}"></use>
-                    </svg> Base</a>
-                <ul class="c-sidebar-nav-dropdown-items">
-                    <li class="c-sidebar-nav-item">
-                        <a class="c-sidebar-nav-link" href="base/breadcrumb.html">
-                            Breadcrumb
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-        <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent"
-            data-class="c-sidebar-unfoldable"></button>
-    </div>
+    @include('partials.sidebar')
 
-
-    <div class="c-wrapper">
+    <div class="c-wrapper c-fixed-components">
         <header class="c-header c-header-light c-header-fixed">
             <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar"
                 data-class="c-sidebar-show">
