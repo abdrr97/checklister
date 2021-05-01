@@ -17,9 +17,10 @@ class CreateChecklistsTable extends Migration
         {
             $table->id();
             $table->string('name');
-            $table->foreignId('checklist_group_id')->constrained();
             $table->timestamps();
             $table->softDeletes();
+
+            $table->foreignId('checklist_group_id')->constrained();
         });
     }
 
