@@ -28,12 +28,14 @@
                 <svg class="c-sidebar-nav-icon">
                     <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-calendar-check') }}"></use>
                 </svg> {{ $group->name }}
+                <span class="badge badge-light badge-pill">{{ $group->checklists->count() }}</span>
             </a>
 
             <ul class="c-sidebar-nav-dropdown-items">
                 @foreach ($group->checklists as $checklist)
                 <li class="c-sidebar-nav-item">
-                    <a class="c-sidebar-nav-link" href="{{ route('admin.checklists.edit',$checklist) }}">
+                    <a class="c-sidebar-nav-link"
+                        href="{{ route('admin.checklist_groups.checklists.edit',[$group,$checklist]) }}">
                         {{ $checklist->name }}
                     </a>
                 </li>

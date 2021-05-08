@@ -33,6 +33,6 @@ Route::group(['middleware' => 'auth'], function ()
     {
         Route::resource('pages', PageController::class);
         Route::resource('checklist_groups', ChecklistGroupController::class)->except(['index', 'show']);
-        Route::resource('checklist_groups.checklists', ChecklistController::class);
+        Route::resource('checklist_groups.checklists', ChecklistController::class)->except(['index', 'show']);
     });
 });
