@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\ChecklistGroup;
 use Illuminate\Http\Request;
 
 class ChecklistController extends Controller
@@ -22,9 +23,9 @@ class ChecklistController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(ChecklistGroup $checklistGroup)
     {
-        //
+        return view('admin.checklists.create', compact('checklistGroup'));
     }
 
     /**
@@ -38,16 +39,6 @@ class ChecklistController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -55,9 +46,9 @@ class ChecklistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(ChecklistGroup $checklistGroup)
     {
-        //
+        return view('admin.checklists.edit', compact('checklistGroup'));
     }
 
     /**

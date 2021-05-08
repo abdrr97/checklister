@@ -11,7 +11,7 @@
 
         @if (auth()->user()->is_admin)
         <li class="c-sidebar-nav-title">{{ __('Admin') }}</li>
-        <li class="c-sidebar-nav-dropdown">
+        <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="{{ route('admin.pages.index') }}">
                 <svg class="c-sidebar-nav-icon">
                     <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-puzzle') }}"></use>
@@ -24,20 +24,28 @@
 
         <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
             <a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle"
-                href="{{ route('admin.checklist_groups.edit',$group->id) }}">
+                href="{{ route('admin.checklist_groups.edit',$group) }}">
                 <svg class="c-sidebar-nav-icon">
-                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-puzzle') }}"></use>
+                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-calendar-check') }}"></use>
                 </svg> {{ $group->name }}
             </a>
 
             <ul class="c-sidebar-nav-dropdown-items">
                 @foreach ($group->checklists as $checklist)
                 <li class="c-sidebar-nav-item">
-                    <a class="c-sidebar-nav-link" href="{{ route('admin.checklists.edit',$checklist->id) }}">
+                    <a class="c-sidebar-nav-link" href="{{ route('admin.checklists.edit',$checklist) }}">
                         {{ $checklist->name }}
                     </a>
                 </li>
                 @endforeach
+                <li class="c-sidebar-nav-item">
+                    <a class="c-sidebar-nav-link" href="{{ route('admin.checklist_groups.checklists.create',$group) }}">
+                        <svg class="c-sidebar-nav-icon">
+                            <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-check') }}"></use>
+                        </svg>
+                        {{ __('New Checklist') }}
+                    </a>
+                </li>
             </ul>
         </li>
         @endforeach
