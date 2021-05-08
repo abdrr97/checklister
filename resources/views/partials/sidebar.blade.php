@@ -43,8 +43,9 @@
                 <li class="c-sidebar-nav-item">
                     <a class="c-sidebar-nav-link" href="{{ route('admin.checklist_groups.checklists.create',$group) }}">
                         <svg class="c-sidebar-nav-icon">
-                            <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-check') }}"></use>
+                            <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-plus') }}"></use>
                         </svg>
+
                         {{ __('New Checklist') }}
                     </a>
                 </li>
@@ -55,9 +56,12 @@
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="{{ route('admin.checklist_groups.create') }}">
                 <svg class="c-sidebar-nav-icon">
-                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-list-rich') }}"></use>
+                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-plus') }}"></use>
                 </svg>
                 {{ __('New Checklist Group') }}
+                <svg class="c-sidebar-nav-icon">
+                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-calendar-check') }}"></use>
+                </svg>
             </a>
         </li>
 

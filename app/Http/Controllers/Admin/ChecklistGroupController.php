@@ -4,9 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreChecklistGroupRequest;
-use App\Models\Checklist;
 use App\Models\ChecklistGroup;
-use Illuminate\Http\Request;
 
 class ChecklistGroupController extends Controller
 {

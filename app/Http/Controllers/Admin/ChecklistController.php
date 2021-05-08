@@ -6,20 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreChecklistRequest;
 use App\Models\Checklist;
 use App\Models\ChecklistGroup;
-use Illuminate\Http\Request;
 
 class ChecklistController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -62,9 +51,9 @@ class ChecklistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreChecklistRequest $request, ChecklistGroup $checklistGroup)
+    public function update(StoreChecklistRequest $request, ChecklistGroup $checklistGroup, Checklist $checklist)
     {
-        $checklistGroup->checklists()->update($request->validated());
+        $checklist->update($request->validated());
 
         return redirect()->route('home');
     }

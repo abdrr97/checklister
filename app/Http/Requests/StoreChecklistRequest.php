@@ -6,6 +6,8 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreChecklistRequest extends FormRequest
 {
+    protected $errorBag = 'store_checklists';
+
     /**
      * Determine if the user is authorized to make this request.
      *
