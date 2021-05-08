@@ -36,8 +36,8 @@
                                     </div>
 
                                     <div class="form-group" data-children-count="2">
-                                        <label for="description">{{ __('Description') }}</label>
-                                        <textarea rows="5" class="form-control" name="description" id="description"
+                                        <label for="task-textarea">{{ __('Description') }}</label>
+                                        <textarea rows="5" class="form-control" name="description" id="task-textarea"
                                             type="text">{{ $task->description }}</textarea>
                                     </div>
                                 </div>
@@ -57,4 +57,14 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#task-textarea' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 @endsection
