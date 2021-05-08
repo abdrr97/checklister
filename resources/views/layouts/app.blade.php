@@ -27,26 +27,36 @@
                     <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-menu') }}"></use>
                 </svg>
             </button>
-            <ul class="c-header-nav mfs-auto"></ul>
-            <ul class="c-header-nav">
-                @auth
-                <li class="c-header-nav-item">
-                    abdrr97@gmail.com
+            <ul class="c-header-nav ml-auto mr-4">
+                <li class="c-header-nav-item d-md-down-none mx-2">
+                    <a href="{{ route('consultation') }}" class="c-header-nav-link">
+                        {{ __('Get Consultation') }}
+                    </a>
+                </li>
+                <li class="c-header-nav-item d-md-down-none mx-2">
+                    <a href="{{ route('welcome') }}" class="c-header-nav-link">
+                        <svg class="c-icon mfe-2">
+                            <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-settings') }}">
+                            </use>
+                        </svg>
+                    </a>
                 </li>
                 <li class="c-header-nav-item dropdown">
                     <a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                         aria-expanded="false">
 
-                        <div class="c-avatar">
-                            <img class="c-avatar-img" src="https://coreui.io/demo/3.4.0/assets/img/avatars/6.jpg"
-                                alt="{{ Auth::user()->name }}">
-                        </div>
+                        <svg class="c-icon mfe-2">
+                            <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-user') }}">
+                            </use>
+                        </svg>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right pt-0">
                         <div class="dropdown-header bg-light py-2">
                             <strong>Account</strong>
                         </div>
-
+                        <a class="dropdown-item" href="#">
+                            <strong>{{ auth()->user()->name }}</strong>
+                        </a>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                             <svg class="c-icon mfe-2">
@@ -60,7 +70,6 @@
                         </form>
                     </div>
                 </li>
-                @endauth
             </ul>
         </header>
         <div class="c-body">

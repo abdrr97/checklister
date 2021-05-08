@@ -18,10 +18,10 @@
                             <div class="row">
                                 <div class="col-sm-12">
 
-                                    @if ($errors->any())
+                                    @if ($errors->store_checklist_groups->any())
 
                                     <div class="alert alert-danger" role="alert">
-                                        @foreach ($errors->all() as $error)
+                                        @foreach ($errors->store_checklist_groups->all() as $error)
                                         <div>{{ $error }}</div>
                                         @endforeach
                                     </div>
