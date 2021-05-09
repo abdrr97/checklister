@@ -60,8 +60,17 @@
             </a>
         </li>
         @endforeach
-        @endif
 
+        <li class="c-sidebar-nav-title">{{ __('Manage Data') }}</li>
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{ route('admin.users.index') }}">
+                <svg class="c-sidebar-nav-icon">
+                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-user') }}"></use>
+                </svg> {{ __('Users') }}
+            </a>
+        </li>
+
+        @endif
 
     </ul>
     <button id="sidebar_button_toggler" class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent"

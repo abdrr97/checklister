@@ -23,7 +23,6 @@
                     <div class="card p-4">
                         <div class="card-body">
                             @yield('content')
-
                         </div>
                     </div>
                 </div>
