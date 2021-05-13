@@ -13,8 +13,6 @@
                         <div class="card-header"> {{ __(" New Checklist in ") }}
                             <strong>{{ $checklistGroup->name }}</strong>
                         </div>
-
-                        {{-- Card Body --}}
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-12">
@@ -42,8 +40,6 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- End Card Body --}}
-
                         <div class="card-footer">
                             <button class="btn btn-sm btn-primary" type="submit"> {{ __('Save') }} </button>
                         </div>

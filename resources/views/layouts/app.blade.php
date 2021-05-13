@@ -21,8 +21,8 @@
 
     <div class="c-wrapper c-fixed-components">
         <header class="c-header c-header-light c-header-fixed">
-            <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar"
-                data-class="c-sidebar-show">
+            <button class="c-header-toggler c-class-toggler mfs-3" type="button" data-target="#sidebar"
+                data-class="c-sidebar-lg-show" responsive="true">
                 <svg class="c-icon c-icon-lg">
                     <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-menu') }}"></use>
                 </svg>
@@ -86,6 +86,22 @@
     <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
 
     @yield('scripts')
+
+    <script>
+        const sidebar = document.querySelector('#sidebar')
+        const buttonToggler = document.querySelector('#sidebar_button_toggler')
+        
+        document.addEventListener('DOMContentLoaded', () =>{
+            localStorage.getItem('checklister_sidebar') === 'on' 
+                ? sidebar.classList.remove('c-sidebar-minimized') 
+                : sidebar.classList.add('c-sidebar-minimized')  
+        })
+    
+        buttonToggler.addEventListener('mouseup',function (e) {
+            let switcher = sidebar.classList.contains('c-sidebar-minimized') ? 'on' : 'off'
+            localStorage.setItem('checklister_sidebar',switcher)
+        })
+    </script>
 </body>
 
 </html>
